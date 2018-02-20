@@ -9,13 +9,13 @@ https://github.com/usc-isi-i2/rltk
 ##### Pycharm
 Just add the rltk package to the root path.
 ##### Sublime
-You should install rely first. Go in to the rltk folder where the file requirements.txt exist and run the following command.
+You should install rely first. Go in to the rltk folder where the file `requirements.txt` exist and run the following command.
 ```
 pip install -r requirements.txt
 ```
 
 ### One last thing before running
-Before running the code, you should change the variable `packagePath` to the path of your rltk package or for Pycharm you can just directly delete the two lines.
+Before running the code, you should change the variable `packagePath` to the path of your rltk package. Besides, there is another way for Pycharm, you can just directly delete the two lines.
 ```
 packagePath='/Users/abc/Desktop/rltk'
 ```
