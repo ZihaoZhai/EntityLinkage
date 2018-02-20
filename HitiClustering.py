@@ -6,8 +6,6 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 packagePath='/Users/zihaozhai/Desktop/Trojan/Internship/ISI/rltk'
 inputPath='HitiJsonInput/'
-#inputPath='ll_nepal/'
-#outputPath='output/'
 outputPath='HitiJsonOutput/'
 sys.path.append(packagePath)
 import rltk
@@ -59,7 +57,6 @@ for f in files:
 	pickTopicWords(data,'GPE',f)
 	pickTopicWords(data,'LOC',f)
 for t in topicWords:
-	#print t
 	newData=json.dumps(t)
 	ouputFile=outputPath+t['preferredName'].replace('.json','').replace('/','').encode('utf-8')+'_'+t['type'].encode('utf-8')+'.json'
 	output=open(ouputFile,'w')
