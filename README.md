@@ -1,14 +1,17 @@
 # EntityLinkage
-This repository focuses on grab topic words refereing to the same real life entity from input dataset and create a graph with the output.
+This repository focuses on grab topic words refereing to the same real life entity from input dataset and create edges between nodes with the output.
+
+### EntityLinkage Download
+Git clone the EntityLinkage package with the following command.
+```
+git clone https://github.com/ZihaoZhai/EntityLinkage.git
+```
 
 ### rltk Download & Configuration
 This code use similarity and distance fucntions from rltk package, so that we should configure rltk first. Here is the Github link.
 ```
 https://github.com/usc-isi-i2/rltk
 ```
-##### Pycharm
-Just add the rltk package to the root path.
-##### Sublime
 You should install rely first. Go in to the rltk folder where the file `requirements.txt` exist and run the following command.
 ```
 pip install -r requirements.txt
