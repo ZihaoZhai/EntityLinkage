@@ -6,3 +6,11 @@ This code use similarity and distance fucntions from RLTK package, so that we sh
 ```
 https://github.com/usc-isi-i2/rltk
 ```
+##### Pycharm
+
+##### Sublime
+You shoudl install rely first. Go in to the rltk folder where the file requirements.txt exist and run the following command.
+```
+pip install -r requirements.txt
+```
+After that, you can run the code.
