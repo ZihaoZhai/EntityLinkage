@@ -1,0 +1,38 @@
+{
+  "_index": "example index",
+  "_type": "example",
+  "_id": "002",
+  "_score": 1,
+  "_source": {
+    "originalText": "originalText",
+    "createdAt": "Mon Jan 1 00:00:00 EDT 1900",
+    "topics": [
+      "topics"
+    ],
+    "id": "001",
+    "GPE": [
+      "example",
+      "it is an example"
+    ],
+    "ORG":[
+      "example",
+      "Example"
+    ],
+    "PER":[
+      "example",
+      "1 2 3 4 5 example"
+    ],
+    "LOC":[
+      "example",
+      "an example"
+    ],
+    "sentimentString": "sentimentString",
+    "geoLocations": [
+      {
+        "lat": 0,
+        "lon": 0,
+        "geohash": "geohash"
+      }
+    ]
+  }
+}

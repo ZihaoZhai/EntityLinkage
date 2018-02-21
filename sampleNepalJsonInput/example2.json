@@ -1,0 +1,41 @@
+{
+  "originalText": "originalText",
+  "createdAt": "1900-01-01T00:00:00Z",
+  "llAnnotation": {
+    "DocumentID": "002",
+    "Type": "Type",
+    "TypeConfidence": 0,
+    "PlaceMention": {},
+    "Status": {
+      "Need": "Need",
+      "Relief": "Relief",
+      "Urgent": true
+    }
+  },
+  "language": "en",
+  "id": 3,
+  "sentimentString": "sentimentString",
+  "GPE": [
+    "example",
+    "it is an example"
+  ],
+  "ORG":[
+    "example",
+    "Example"
+  ],
+  "PER":[
+    "example",
+    "1 2 3 4 5 example"
+  ],
+  "LOC":[
+    "example",
+    "an example"
+  ],
+  "geoLocations": [
+    {
+      "lat": 0,
+      "lon": 0,
+      "geohash": "geohash"
+    }
+  ]
+}
