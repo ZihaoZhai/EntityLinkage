@@ -28,3 +28,13 @@ If your EntityLinkage and rltk are in the same outer folder, the default rltk pa
 ```
 python [code-file-name] [input-path] [output-path] [rltk-path]
 ```
+Because of the different format of the Haiti and Nepal json elements, we have to run different codes to get the result. Here, we have created sample dataset similar to each of them to test. Thus, we can run them with comands as follows.
+```
+$ python HaitiClustering.py ../smapleHaitiJsonInput/ ../sampleHaitiJsonOutput/
+$ python NepalClustering.py ../sampleNepalJsonInput/ ../sampleNepalJsonOutput/
+```
+or if your rltk is not in the default path
+```
+$ python HaitiClustering.py ../smapleHaitiJsonInput/ ../sampleHaitiJsonOutput/ ../rltk
+$ python NepalClustering.py ../sampleNepalJsonInput/ ../sampleNepalJsonOutput/ ../rltk
+```
