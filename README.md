@@ -20,21 +20,23 @@ $ pip install -r requirements.txt
 ### Run code
 Now you should be in the place where both EntityLinkage and rltk are, and then use the command to go into the EntityLinkage folder and run the code.
 ```
-$ cd EntityLinkage
+$ cd ../EntityLinkage
+```
+```
 python [code-file-name] [input-path] [output-path]
 ```
-If your EntityLinkage and rltk are in the same outer folder, the default rltk path should work. If not, please add the rltk path after your command and use space to separate like following.
+If your EntityLinkage and rltk are in the same outer folder, the default rltk path should work. If not, please add the rltk path after your command and use space to separate like the following.
 
 ```
 python [code-file-name] [input-path] [output-path] [rltk-path]
 ```
-Because of the different format of the Haiti and Nepal json elements, we have to run different codes to get the result. Here, we have created sample dataset similar to each of them to test. Thus, we can run them with comands as follows.
+Because of the different format of the Haiti and Nepal json elements, we have to run different codes to get the result. Here, we have created sample dataset similar to each of them to test, so that we can run them with comands as follows.
 ```
-$ python HaitiClustering.py /sampleHaitiJsonInput/ /sampleHaitiJsonOutput/
-$ python NepalClustering.py /sampleNepalJsonInput/ /sampleNepalJsonOutput/
+$ python HaitiClustering.py sampleHaitiJsonInput/ sampleHaitiJsonOutput/
+$ python NepalClustering.py sampleNepalJsonInput/ sampleNepalJsonOutput/
 ```
 or if your rltk is not in the default path
 ```
-$ python HaitiClustering.py /sampleHaitiJsonInput/ /sampleHaitiJsonOutput/ ../rltk
-$ python NepalClustering.py /sampleNepalJsonInput/ /sampleNepalJsonOutput/ ../rltk
+$ python HaitiClustering.py sampleHaitiJsonInput/ sampleHaitiJsonOutput/ ../rltk
+$ python NepalClustering.py sampleNepalJsonInput/ sampleNepalJsonOutput/ ../rltk
 ```
