@@ -15,8 +15,8 @@ tk = rltk.init()
 topicWords=[]
 thr=0.8
 def pickTopicWords(data,tp,file):
-	if data['_source'].has_key(tp):
-		for d in data['_source'][tp]:
+	if data.has_key(tp):
+		for d in data[tp]:
 			haveName=0
 			for ele in range(len(topicWords)):
 				if topicWords[ele]['type']==tp:
@@ -24,8 +24,9 @@ def pickTopicWords(data,tp,file):
 						if topicWords[ele]['originalNames'][n]['name']==d:
 							topicWords[ele]['originalNames'][n]['docIds'].append(file)
 							haveName=1
-					for n in range(len(topicWords[ele]['originalNames'])):
-						if haveName==0:
+							break
+					if haveName==0:
+						for n in range(len(topicWords[ele]['originalNames'])):
 							similarity=tk.jaccard_index_similarity(set(topicWords[ele]['originalNames'][n]['name'].split(' ')), set(d.split(' ')))
 							if similarity>=thr:
 								haveName=1
