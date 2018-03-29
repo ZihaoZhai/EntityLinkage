@@ -173,7 +173,7 @@ def spectralClustering(wordsList,stringSimilarity,groundTruthPath,thr):
 		#print '\n'
 		#print tp,len(matrix[tp])
 		#spectral=SpectralClustering(n_clusters=typeClusterNum[tp],affinity="precomputed")
-		spectral=SpectralClustering(n_clusters=typeClusterNum[tp],affinity="precomputed",eigen_solver='arpack')
+		spectral=SpectralClustering(n_clusters=typeClusterNum[tp],affinity="precomputed",eigen_solver='arpack',random_state=1)
 		clusterLabels=spectral.fit_predict(matrix[tp])
 		#print len(clusterLabels),len(set(clusterLabels)),max(clusterLabels)
 		for i in range(len(clusterLabels)):
