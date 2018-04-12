@@ -232,6 +232,31 @@ def drawGraph(performanceResult):
 	plt.legend(bbox_to_anchor=(1.03, 1), loc=2, borderaxespad=0)
 	plt.grid(True)
 	plt.show()
+
+def drawGraphRank(performanceResult):
+	plt.subplot2grid((9,9),(0,0),rowspan=4,colspan=8)
+	print len(performanceResult["kList"]),len(performanceResult["fScoreList"]['PER'])
+	plt.plot(performanceResult["kList"], performanceResult["fScoreList"]['PER'], '.-',label='PER')
+	plt.plot(performanceResult["kList"], performanceResult["fScoreList"]['ORG'], '.-',label='ORG')
+	plt.plot(performanceResult["kList"], performanceResult["fScoreList"]['LOC'], '.-',label='LOC')
+	plt.plot(performanceResult["kList"], performanceResult["fScoreList"]['GPE'], '.-',label='GPE')
+	plt.axis([0, 10, 0, 1])
+	plt.ylabel('F-Score')
+	plt.xlabel('K-Value')
+	plt.legend(bbox_to_anchor=(1.03, 1), loc=2, borderaxespad=0)
+	plt.grid(True)
+	plt.title('Performance Curve')
+	plt.subplot2grid((9,9),(5,0),rowspan=4,colspan=8)
+	plt.plot(performanceResult["recallList"]['PER'], performanceResult["precisionList"]['PER'], '.-',label='PER')
+	plt.plot(performanceResult["recallList"]['ORG'], performanceResult["precisionList"]['ORG'], '.-',label='ORG')
+	plt.plot(performanceResult["recallList"]['LOC'], performanceResult["precisionList"]['LOC'], '.-',label='LOC')
+	plt.plot(performanceResult["recallList"]['GPE'], performanceResult["precisionList"]['GPE'], '.-',label='GPE')
+	plt.axis([0, 1, 0, 1])
+	plt.xlabel('Recall')
+	plt.ylabel('Precision')
+	plt.legend(bbox_to_anchor=(1.03, 1), loc=2, borderaxespad=0)
+	plt.grid(True)
+	plt.show()
 		
 
 	
