@@ -15,11 +15,12 @@ def readGroundTruth(groundTruthPath):
 	groundTruthPairSet={'PER':set(),'LOC':set(),'GPE':set(),'ORG':set()}
 	groundTruthFiles=os.listdir(groundTruthPath)
 	for f in groundTruthFiles:
-		input=open(groundTruthPath+'/'+f,'r')
-		data=json.loads(input.read())
-		for i in xrange(len(data['originalNames'])):
-			for j in xrange(i+1,len(data['originalNames'])):
-				groundTruthPairSet[data['type']].add((data['originalNames'][i]['name'],data['originalNames'][j]['name']))
+		if f!='.DS_Store':
+			input=open(groundTruthPath+'/'+f,'r')
+			data=json.loads(input.read())
+			for i in xrange(len(data['originalNames'])):
+				for j in xrange(i+1,len(data['originalNames'])):
+					groundTruthPairSet[data['type']].add((data['originalNames'][i]['name'],data['originalNames'][j]['name']))
 	return groundTruthPairSet
 
 def n_char_token_jaccard_similarity(strA,strB,tokenLen):

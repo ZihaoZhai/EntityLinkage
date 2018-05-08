@@ -72,8 +72,8 @@ def pickTopicWordsbyType(wordsBag,thr,stringSimilarity,tp):
 		if haveName==0:
 			if mostSimilar[0]!=-1:
 				obj={
-						'name':d,
-						'docIds':wordsBag[tp][d]
+					'name':d,
+					'docIds':wordsBag[tp][d]
 					}
 				mostSimilar[1]['originalNames'].append(obj)
 				#if len(d[0])>len(mostSimilar[1]['preferredName']):
@@ -121,21 +121,27 @@ elif 'AWATD' in os.listdir(inputPath)[ind]:
 			data=input.read()
 			data=json.loads(data)
 			for t in wordsBag:
-				if data["_source"].has_key(t):
+				#if data["_source"].has_key(t):
+				if data["_source"].has_key(t) and data["_source"]['topics']!=[]:
 					for tw in data["_source"][t]:
 						wordsBag[t][tw]=wordsBag[t].get(tw,[])+[f]
 for tp in wordsBag:
 	if tp=='LOC':
-		topicWords[tp]=pickTopicWordsbyType(wordsBag,0.35,'trigram_jaccard_similarity',tp)
+		print tp
+		topicWords[tp]=pickTopicWordsbyType(wordsBag,0.3,'trigram_jaccard_similarity',tp)
 	elif tp=='ORG':
-		topicWords[tp]=pickTopicWordsbyType(wordsBag,0.8,'jaro_winkler_similarity',tp)
+		print tp
+		topicWords[tp]=pickTopicWordsbyType(wordsBag,0.5,'string_cosine_similarity',tp)
 	elif tp=='PER':
+		print tp
 		topicWords[tp]=pickTopicWordsbyType(wordsBag,0.9,'monge_elkan_similarity',tp)
 	elif tp=='GPE':
-		topicWords[tp]=pickTopicWordsbyType(wordsBag,0.9,'symmetric_monge_elkan_similarity',tp)
+		print tp
+		topicWords[tp]=pickTopicWordsbyType(wordsBag,0.85,'symmetric_monge_elkan_similarity',tp)
 if not os.path.exists(outputPath):
 	os.makedirs(outputPath)
 for tp in topicWords:
+	print tp,':',len(topicWords[tp])
 	for t in topicWords[tp]:
 		'''
 		if len(t['originalNames'])>1:
